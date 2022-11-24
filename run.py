@@ -2,6 +2,14 @@ from stem.control import Controller
 from flask import Flask, render_template, request, send_file
 import os
 import shutil
+import service_utils
+import rsa
+
+#creamos llaves y la guardamos
+publicKey, privateKey = rsa.newkeys(512)
+service_utils.save_key(publicKey, privateKey)
+privateKey = publicKey
+
 
 #setting up the webpage service
 app = Flask("security_page")
@@ -36,28 +44,13 @@ def index():
 
         path = './hidden_service_custom'
         path1 = "./" + 'your_hidden_service' + ".zip"
-        # if os.path.exists(path):
-        #     shutil.rmtree(path, ignore_errors=False, onerror=None)
-        #     os.remove(path1)
-        # os.mkdir(path)
-        # src_path = "./run.py"
-        # dst_path = path + "/run.py"
-        # shutil.copy(src_path, dst_path)
-        # print('Copied')
-        # print(path)
         shutil.make_archive('your_hidden_service', 'zip',path)
         return send_file(path1, as_attachment=True)
-        # return render_template("index.html")
         
 
     else:
         return render_template('index.html')
 
-
-    
-# @app.route('/home')
-# def home():
-#     return render_template("home.html")
 
 @app.route('/about')
 def about():
@@ -67,6 +60,8 @@ def about():
 def messages():
     if request.method=='POST':
         message = str(request.form['message'])
+        encMessage = rsa.encrypt(message.encode(), publicKey)
+        service_utils.write(encMessage)
         return render_template("messages.html")
 
     else:
