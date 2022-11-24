@@ -1,6 +1,5 @@
 from stem.control import Controller
-from flask import Flask, render_template
-
+from flask import Flask, render_template, request
 
 #setting up the webpage service
 app = Flask("security_page")
@@ -9,16 +8,24 @@ host = "127.0.0.1"
 hidden_svc_dir = "c:/temp/"
 
 #here you can add routes
-@app.route('/')
+@app.route('/', methods =['GET', 'POST'])
 def index():
-    return render_template("home.html")
+    if request.method=='POST':
+        title = str(request.form['title'])
+        text = str(request.form['text'])
+        return render_template("index.html")
 
-@app.route('/home')
-def home():
-    return render_template("home.html")
-@app.route('/instructions')
-def instructions():
-    return render_template("instructions.html")
+    else:
+        return render_template('index.html')
+
+
+# @app.route('/home')
+# def home():
+#     return render_template("home.html")
+
+@app.route('/about')
+def about():
+    return render_template("about.html")
     
 if __name__ == "__main__":
     print(" * Getting controller")

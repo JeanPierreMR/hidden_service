@@ -2,16 +2,19 @@
 <html lang="zxx">
 
 <head>
+  <title>Zyber Wall</title>
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="keywords"
-    content="Induz Responsive web template, Bootstrap Web Templates, Android Compatible web template, Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
-  <title>Zyber Wall</title>
-  <link href="//fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;0,900;1,400&display=swap" rel="stylesheet">
+  <meta name="keywords" content="Induz Responsive web template, Bootstrap Web Templates, Android Compatible web template, Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
   
   <!-- Template CSS -->
-  <link rel="stylesheet" href="assets/css/style-starter.css">
+  <!-- <link rel="stylesheet" href="assets/css/style-starter.css"> -->
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style-starter.css') }}">
+
+  <!--webfonts-->
+  <link href="//fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;0,900;1,400&display=swap" rel="stylesheet">
+  
 </head>
 
 <body>
@@ -20,7 +23,7 @@
     <header id="site-header" class="header-w3l fixed-top">
       <div class="container">
         <nav class="navbar navbar-expand-lg stroke">
-          <a class="navbar-brand" href="index.html">
+          <a class="navbar-brand" href="{{ url_for('index') }}">
             Zyber Wall.
           </a>
           <!-- if logo is image enable this   
@@ -38,10 +41,10 @@
           <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
             <ul class="navbar-nav mx-lg-auto">
               <li class="nav-item active">
-                <a class="nav-link" href="index.html">Home</a>
+                <a class="nav-link" href="{{ url_for('index') }}">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="about.html">Instructions</a>
+                <a class="nav-link" href="{{ url_for('about') }}">Instructions</a>
               </li>
               <!-- <li class="nav-item">
                 <a class="nav-link" href="services.html">Services</a>
@@ -96,7 +99,7 @@
       <div class="container">
         <div class="bannerhny-info text-center">
           <h3 class="">Tor hidden services</h3>
-          <a class="btn btn-style btn-white mt-sm-5 mt-4" href="about.html">
+          <a class="btn btn-style btn-white mt-sm-5 mt-4" href="{{ url_for('about') }}">
             Create <span class="fa fa-angle-double-right ml-2" aria-hidden="true"></span></a>
         </div>
       </div>
@@ -151,7 +154,7 @@
       <div class="row">
         <div class="col-lg-6">
           <div class="position-relative">
-            <img src="assets/images/onionRouting.png" alt="" class="radius-image img-fluid">
+            <img src="{{ url_for('static', filename='images/onionRouting.png') }}" alt="" class="radius-image img-fluid">
           </div>
         </div>
         <div class="col-lg-6 mt-lg-0 mt-5 align-self pl-lg-5">
@@ -182,7 +185,7 @@
           <p class="para-sub pr-lg-5 mt-md-4 mt-3 mx-auto">Onion routing is an anonymous communication system based on routing 
             requests to a web server through a three-node system: Input node, Middle node and Output node.
           </p>
-          <a class="btn btn-style btn-outline-light mt-sm-5 mt-4 mr-2" href="about.html">
+          <a class="btn btn-style btn-outline-light mt-sm-5 mt-4 mr-2" href="{{ url_for('about') }}">
             Create <span class="fa fa-angle-double-right ml-2" aria-hidden="true"></span></a>
         </div>
         <div class="col-lg-6 w3l-content-right pl-lg-5 mt-lg-0 mt-5">
@@ -312,7 +315,7 @@
         </div>
         <div class="col-lg-6 w3l-stats-content-grid-right">
           <!-- <img src="assets/images/tor.jpg" alt="" class="radius-image img-fluid mt-8"> -->
-          <br><br><br><br><br><img src="assets/images/hiddenService.png" alt="" class="radius-image img-fluid ml-4">
+          <br><br><br><br><br><img src="{{ url_for('static', filename='images/hiddenService.png') }}" alt="" class="radius-image img-fluid ml-4">
         </div>
       </div>
     </div>
@@ -329,7 +332,7 @@
           Onion services are an overlay network on top of TCP/IP, so in some sense IP addresses are not even meaningful to Onion Services: they 
           are not even used in the protocol.</p>
         <div class="buttons mt-md-5 mt-4">
-          <a class="btn btn-style btn-white mr-3" href="about.html">
+          <a class="btn btn-style btn-white mr-3" href="{{ url_for('about') }}">
             Create <span class="fa fa-angle-double-right ml-2" aria-hidden="true"></span></a>
             <!-- <a class="btn btn-style btn-primary" href="about.html"> Get a quote <span
               class="fa fa-angle-double-right ml-2" aria-hidden="true"></span></a> -->
@@ -353,7 +356,7 @@
           <div class="card img">
             <div class="card-body img">
               <a href="blog-single.html" class="d-block">
-                <img src="assets/images/propublica.png" alt="" class="img-fluid radius-image">
+                <img src="{{ url_for('static', filename='images/propublica.png') }}" alt="" class="img-fluid radius-image">
               </a>
               <!-- <div class="blog-des mt-4">
                 <h5 class="card-title mb-2"><a href="blog-single.html">ProPublica</a>
@@ -367,7 +370,7 @@
           <div class="card img">
             <div class="card-body img">
               <a href="blog-single.html" class="d-block">
-                <img src="assets/images/ahmia.png" alt="" class="img-fluid radius-image">
+                <img src="{{ url_for('static', filename='images/ahmia.png') }}" alt="" class="img-fluid radius-image">
               </a>
               <!-- <div class="blog-des mt-4">
                 <h5 class="card-title mb-10"><a href="blog-single.html">Ahmia</a>
@@ -381,7 +384,7 @@
           <div class="card img">
             <div class="card-body img">
               <a href="blog-single.html" class="d-block">
-                <img src="assets/images/duck.webp" alt="" class="img-fluid radius-image">
+                <img src="{{ url_for('static', filename='images/duck.webp') }}" alt="" class="img-fluid radius-image">
               </a>
               <!-- <div class="blog-des mt-4">
                 <h5 class="card-title mb-2"><a href="blog-single.html">DuckDuckGo</a>
@@ -408,11 +411,13 @@
             <h3 class="title-w3l two">Upload your onion link here</h3>
           </div>
 
-					<form action="#" method="post" class="signin-form mt-4 mb-2">
+          <!-- FORM -->
+					<form action="{{ url_for('index') }}" method="post" class="signin-form mt-4 mb-2">
 						<div class="forms-gds">
-							<input type="text" name="" placeholder="Name" required/>
-							<input type="email" name="" placeholder="Link" required />
-							<button class="btn btn-style btn-primary">Upload</button>
+							<input type="text" id="title" name="title" placeholder="Title" required/>
+							<input type="text" id="text" name="text" placeholder="Text" required />
+
+							<button type="submit" class="btn btn-style btn-primary">Upload</button>
             </div>
             <p class="mt-4 text-center">By submitting this form, you agree to the <a href="#">privacy policy</a> and <a href="#">terms of use</a></p>
 					</form>
@@ -570,10 +575,10 @@
   </footer>
   <!--//footer-->
   <!-- Template JavaScript -->
-  <script src="assets/js/jquery-3.3.1.min.js"></script>
-  <script src="assets/js/theme-change.js"></script>
+  <script src="{{ url_for('static', filename='js/jquery-3.3.1.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/theme-change.js') }}"></script>
   <!-- owl carousel -->
-  <script src="assets/js/owl.carousel.js"></script>
+  <script src="{{ url_for('static', filename='js/owl.carousel.js') }}"></script>
   <!-- script for tesimonials carousel slider -->
   <!-- script for owlcarousel -->
   <script>
@@ -610,8 +615,8 @@
   </script>
   <!-- //script for tesimonials carousel slider -->
   <!-- stats number counter-->
-  <script src="assets/js/jquery.waypoints.min.js"></script>
-  <script src="assets/js/jquery.countup.js"></script>
+  <script src="{{ url_for('static', filename='js/jquery.waypoints.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/jquery.countup.js') }}"></script>
   <script>
     $('.counter').countUp();
   </script>
@@ -656,7 +661,7 @@
   <!--//MENU-JS-->
 
 
-  <script src="assets/js/bootstrap.min.js"></script>
+  <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
 
 </body>
 
