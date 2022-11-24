@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="zxx">
+
+<head>
+  <title>Zyber Wall</title>
+
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="keywords" content="Induz Responsive web template, Bootstrap Web Templates, Android Compatible web template, Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+  
+  <!-- <link href="//fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;0,900;1,400&display=swap" rel="stylesheet"> -->
+ 
+  <!-- Template CSS -->
+  <!-- <link rel="stylesheet" href="assets/css/style-starter.css"> -->
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style-starter.css') }}">
+</head>
+
+<body>
+  <div class="header-w3l">
+    <!--header-->
+    <header id="site-header" class="header-w3l fixed-top">
+      <div class="container">
+        <nav class="navbar navbar-expand-lg stroke">
+          <a class="navbar-brand" href="{{ url_for('index') }}">
+            Zyber Wall.
+          </a>
+          <!-- if logo is image enable this   
+            <a class="navbar-brand" href="#index.html">
+                <img src="image-path" alt="Your logo" title="Your logo" style="height:35px;" />
+            </a> -->
+          <button class="navbar-toggler  collapsed bg-gradient" type="button" data-toggle="collapse"
+            data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon fa icon-expand fa-bars"></span>
+            <span class="navbar-toggler-icon fa icon-close fa-times"></span>
+            </span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+            <ul class="navbar-nav mx-lg-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="{{ url_for('index') }}">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{{ url_for('about') }}">Instructions</a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="{{ url_for('messages') }}">Messages</a>
+              </li>
+            </ul>
+
+          </div>
+          <!-- toggle switch for light and dark theme -->
+          <div class="mobile-position">
+            <nav class="navigation">
+              <div class="theme-switch-wrapper">
+                <label class="theme-switch" for="checkbox">
+                  <input type="checkbox" id="checkbox">
+                  <div class="mode-container">
+                    <i class="gg-sun"></i>
+                    <i class="gg-moon"></i>
+                  </div>
+                </label>
+              </div>
+            </nav>
+          </div>
+          <!-- //toggle switch for light and dark theme -->
+        </nav>
+      </div>
+    </header>
+  </div>
+  <!-- //header -->
+  <!--/breadcrumb-bg-->
+  <div class="breadcrumb-bg w3l-inner-page-breadcrumb py-5">
+    <div class="container pt-lg-5 pt-md-3 p-lg-4 pb-md-3 my-lg-3">
+      <h2 class="title pt-5">Secret Messages</h2>
+      <ul class="breadcrumbs-custom-path mt-3 text-center">
+        <li><a href="{{ url_for('index') }}">Home</a></li>
+        <li class="active"><span class="fa fa-arrow-right mx-2" aria-hidden="true"></span> Messages </li>
+      </ul>
+    </div>
+  </div>
+  <!--//breadcrumb-bg-->
+ <!-- contacts-5-grid -->
+
+  <!-- middle -->
+  <div class="w3l-middle py-5">
+    <div class="container py-lg-5 py-md-4">
+      <div class="row no-gutters">
+        <div class="welcome-left pr-lg-5">
+          <h6 class="title-subhny two mb-2"><span>Secret messages</span></h6>
+          <h3 class="title-w3l two mb-4">This message will be sent and saved for the page owner to see.</h3>
+          <!-- <p class="pr-lg-5">Lorem ipsum dolor sit amet,Ea consequuntur illum facere aperiam sequi optio
+            adipisicing.Lorem ipsum dolor sit amet,Ea consequuntur illum facere aperiam sequi optio adipisicing. </p> -->
+          <!-- <div class="buttons mt-md-5 mt-4">
+            <a class="btn btn-style btn-white mr-3" href="{{ url_for('about') }}">
+              Read More <span class="fa fa-angle-double-right ml-2" aria-hidden="true"></span></a>
+            <a class="btn btn-style btn-primary" href="{{ url_for('about') }}"> Get a quote <span
+                class="fa fa-angle-double-right ml-2" aria-hidden="true"></span></a>
+
+          </div> -->
+        </div>
+        <div class="welcome-left-frm pr-lg-5 mt-lg-0 mt-5">
+          <div class="w3request-form">
+
+            <form action="{{ url_for('messages') }}" method="post">
+              <h4 class="title-w3l">
+                Send a <span>Message</span></h4>
+              <p class="frm-p mt-3">
+                By submitting this form, you agree to the privacy policy and terms of use            </p>
+  
+              <div class="form-style-w3ls mt-4">
+                <input type="text" id="message" name="message" placeholder="Message" required/>
+                <!-- <input type="email" name="Email" placeholder="Your Email" required="">
+                <input type="text" name="Phone" placeholder="Phone Number" required=""> -->
+
+                <button type="submit" class="btn btn-style btn-primary w-100 mt-3">Send</button>  
+              </div>
+            </form>
+                    </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <!-- //middle -->
+
+  <!-- footer-28 block -->
+  <footer class="footer-28 position-relative py-5">
+    <div class="container">
+      <p class="copy-footer-28 text-center">© 2022 | Zyber Wall</p>
+    </div>
+
+    <!-- move top -->
+    <button onclick="topFunction()" id="movetop" title="Go to top">
+      &#10548;
+    </button>
+    <script>
+      // When the user scrolls down 20px from the top of the document, show the button
+      window.onscroll = function () {
+        scrollFunction()
+      };
+
+      function scrollFunction() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+          document.getElementById("movetop").style.display = "block";
+        } else {
+          document.getElementById("movetop").style.display = "none";
+        }
+      }
+
+      // When the user clicks on the button, scroll to the top of the document
+      function topFunction() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+      }
+    </script>
+    <!-- /move top -->
+    <!-- //footer-28 block -->
+  </footer>
+    <!-- //footer-28 block -->
+  </footer>
+  <!--//footer-->
+  <!-- Template JavaScript -->
+  <script src="{{ url_for('static', filename='js/jquery-3.3.1.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/theme-change.js') }}"></script>
+  <!-- disable body scroll which navbar is in active -->
+  <script>
+    $(function () {
+      $('.navbar-toggler').click(function () {
+        $('body').toggleClass('noscroll');
+      })
+    });
+  </script>
+  <!-- disable body scroll which navbar is in active -->
+
+  <!--/MENU-JS-->
+  <script>
+    $(window).on("scroll", function () {
+      var scroll = $(window).scrollTop();
+
+      if (scroll >= 80) {
+        $("#site-header").addClass("nav-fixed");
+      } else {
+        $("#site-header").removeClass("nav-fixed");
+      }
+    });
+
+    //Main navigation Active Class Add Remove
+    $(".navbar-toggler").on("click", function () {
+      $("header").toggleClass("active");
+    });
+    $(document).on("ready", function () {
+      if ($(window).width() > 991) {
+        $("header").removeClass("active");
+      }
+      $(window).on("resize", function () {
+        if ($(window).width() > 991) {
+          $("header").removeClass("active");
+        }
+      });
+    });
+  </script>
+  <!--//MENU-JS-->
+
+
+  <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+
+</body>
+
+</html>

@@ -9,7 +9,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="keywords" content="Induz Responsive web template, Bootstrap Web Templates, Android Compatible web template, Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
   
-  <link href="//fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;0,900;1,400&display=swap" rel="stylesheet">
+  <!-- <link href="//fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;0,900;1,400&display=swap" rel="stylesheet"> -->
  
   <!-- Template CSS -->
   <!-- <link rel="stylesheet" href="assets/css/style-starter.css"> -->
@@ -44,6 +44,9 @@
               </li>
               <li class="nav-item active">
                 <a class="nav-link" href="{{ url_for('about') }}">Instructions</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{{ url_for('messages') }}">Messages</a>
               </li>
             </ul>
 
@@ -88,14 +91,15 @@
         <div class="row">
           <div class="col-lg-6 pl-lg-5 align-self">
             <h6 class="title-subhny mb-2"><span>Installation</span></h6>
-            <h3 class="title-w3l mb-4">Tor Browser <a href="https://www.torproject.org/download/">download page</a></h3>
+            <h3 class="title-w3l mb-4">Tor Browser <a href="">download page</a></h3>
             <p class="">
-              1. Download the Windows .exe/.dmg/.tar.xz file.
-              <br>2. Verify the file's signature.
-              <br>3. When the download is complete, double click the .exe file. Complete the installation wizard process.
+              1. Visit: https://www.torproject.org/download/
+              <br>2. Download the Windows .exe/.dmg/.tar.xz file.
+              <br>3. Verify the file's signature.
+              <br>4. When the download is complete, double click the .exe file. Complete the installation wizard process.
             </p>
 
-            <a href="https://www.torproject.org/download/" class="btn btn-style btn-primary mt-lg-5 mt-4">Download Tor</a>
+            <a href="#create" class="btn btn-style btn-primary mt-lg-5 mt-4">Create hidden service</a>
           </div>
           <div class="col-lg-6 left-wthree-img mt-lg-0 mt-5 pl-lg-5">
             <img src="{{ url_for('static', filename='images/tor.jpg') }}" alt="" class="img-fluid radius-image">
@@ -106,7 +110,7 @@
     </div>
   </section>
   <!-- /w3l-content-2-->
-  <section class="w3l-specification-6 py-5">
+  <section class="w3l-specification-6 py-5" id="create">
     <!-- /specification-6-->
     <div class="specification-6-mian py-lg-5 py-md-4">
       <div class="container">
@@ -186,7 +190,7 @@ if __name__ == "__main__":
   </section>
 
   <!-- middle -->
-  <div class="w3l-middle py-5">
+  <!-- <div class="w3l-middle py-5">
     <div class="container py-lg-5 py-md-4">
       <div class="row no-gutters">
         <div class="welcome-left pr-lg-5">
@@ -228,7 +232,7 @@ if __name__ == "__main__":
       </div>
 
     </div>
-  </div>
+  </div> -->
   <!-- //middle -->
 
   <!--/team-sec-->
